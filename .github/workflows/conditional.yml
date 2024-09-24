@@ -1,8 +1,8 @@
-name: example-workflow
+name: Conditional wf
 on: [push]
 jobs:
   hello-world:
-    if: github.repository == 'octo-org/octo-repo-prod'
+    if: github.repository == 'devops4noobs/github-actions'
     runs-on: ubuntu-latest
     steps:
       - name: "Hello World"
