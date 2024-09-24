@@ -82,4 +82,6 @@ Workflow commands:
 	- group log messages
 	- masking values in logs: run: echo "::add-mask::${{secrets.SECRET_VALUE}}"
 
-Contexts = a way to access information about workflow runs, variables, runner env, jobs and steps.  ${{secrets.SECRET_VALUE}}
+Contexts = a way to access information about workflow runs, variables, runner env, jobs and steps.  ${{secrets.SECRET_VALUE}} ${{env.DAY_OF_WEEK== 'MONDAY }}
+
+run job only if branch is production: if: github.ref == 'refs/heads/production'
