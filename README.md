@@ -50,3 +50,19 @@ jobs concurency -> ensure only a single job or workflow is running at a time.
 
 confitional keywords for steps:
 jobs.<job_id>.if conditional can be used to prevent a job from running unless a condition is met.
+
+functions:
+- contains
+- startsWith
+- endsWith
+- format
+- join
+- toJson
+- fromJson
+- hashFiles
+
+status check functions:
+success()
+always()
+cancelled()
+failure()
