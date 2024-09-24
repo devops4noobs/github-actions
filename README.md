@@ -51,18 +51,35 @@ jobs concurency -> ensure only a single job or workflow is running at a time.
 confitional keywords for steps:
 jobs.<job_id>.if conditional can be used to prevent a job from running unless a condition is met.
 
-functions:
-- contains
-- startsWith
-- endsWith
-- format
-- join
-- toJson
-- fromJson
-- hashFiles
+Functions:
+	- contains
+	- startsWith
+	- endsWith
+	- format
+	- join
+	- toJson
+	- fromJson
+	- hashFiles
 
-status check functions:
-success()
-always()
-cancelled()
-failure()
+Status check functions:
+	success()
+	always()
+	cancelled()
+	failure()
+
+Workflow commands:
+	- set env vars: echo "ACTION_ENV=production" >> $GITHUB_ENV
+	- adding to system path: echo "/path/to/dir" >> $GITHUB_PATH
+	- set output parameters:
+	steps: 
+	- name: set output
+		id : example_step
+		run: echo "result=output_value" >> $GITHUB_OUTPUT  
+	- name: use output
+		run: echo "The output was ${{ steps.example_step.outputs.result }}
+
+	- create debbug message: echo " ::debug:: This is a debug message"
+	- group log messages
+	- masking values in logs: run: echo "::add-mask::${{secrets.SECRET_VALUE}}"
+
+Contexts = a way to access information about workflow runs, variables, runner env, jobs and steps.  ${{secrets.SECRET_VALUE}}
