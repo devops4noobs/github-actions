@@ -66,6 +66,10 @@ Status check functions:
 	always()
 	cancelled()
 	failure()
+ ex: steps:
+ 	- name: test
+  	  run: npm test
+          if: always() # job/step always runs regardeless the status of previous step/job 
 
 Workflow commands:
 	- set env vars: echo "ACTION_ENV=production" >> $GITHUB_ENV
@@ -84,4 +88,7 @@ Workflow commands:
 
 Contexts = a way to access information about workflow runs, variables, runner env, jobs and steps.  ${{secrets.SECRET_VALUE}} ${{env.DAY_OF_WEEK== 'MONDAY }}
 
-run job only if branch is production: if: github.ref == 'refs/heads/production'
+Expressions:
+run job/step only if branch is production: if: github.ref == 'refs/heads/production' -> contexts: github, env, vars, job, jobs, steps, runner, secrets, matrix, needs, inputs, strategy.
+continue-on-error: true/false, decide if the job continue even if a step fails. by default job fails. if at job level, it will apply to all the steps in the job
+
