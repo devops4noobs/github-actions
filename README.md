@@ -34,7 +34,7 @@ on:
     push
 	schedule: #scheduled time
 	  - cron ' 40 5 22 * * ' # minute hour day month dayofweek
-	workflow_dispatch -> to run the workflow manually
+	workflow_dispatch -> to run the workflow manually. !To trigger the workflow_dispatch event, your workflow must be in the default branch!
 	repository_dispatch  # trigger the wf via an external HTTP endpoint. 
 						 # only trigger a wf run if the wf file is on the default brench.
 						 # send a POST request to the rep;s dispatches endpoint
@@ -92,3 +92,11 @@ Expressions:
 run job/step only if branch is production: if: github.ref == 'refs/heads/production' -> contexts: github, env, vars, job, jobs, steps, runner, secrets, matrix, needs, inputs, strategy.
 continue-on-error: true/false, decide if the job continue even if a step fails. by default job fails. if at job level, it will apply to all the steps in the job
 
+cache node dependencies: when making a change in package.json (by installing new dependency like npm install nodemon) the cache is invalidated and new cache key is created in Caches.
+
+github packages: 
+integrates with several packages managers like npm, maven repo etc
+built in features for storing and managing software packages alongside code on github.
+secure publish and share code in organization or publicly'
+keeps code and packages together
+instead of credentials for each registry (npm.pkg.github.com, maven.pkg.github.com etc) uses GITHUB_TOKEN to provide access to github repository where workflow is defined ghcr.io/OWNER/image_name:version
