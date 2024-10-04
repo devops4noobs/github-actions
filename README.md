@@ -100,3 +100,14 @@ built in features for storing and managing software packages alongside code on g
 secure publish and share code in organization or publicly'
 keeps code and packages together
 instead of credentials for each registry (npm.pkg.github.com, maven.pkg.github.com etc) uses GITHUB_TOKEN to provide access to github repository where workflow is defined ghcr.io/OWNER/image_name:version
+Github Packages tab : is a hosting service , a place on github where we can publish, store and share our images/artifacts and use them as dependencies in your projects.
+	- name: GHCR Login
+          uses: docker/login-action@v3
+          with:
+            registry: gchr.io
+            username: ${{ github.repository_owner }} #from github context
+            password: ${{ secrets.GITHUB_TOKEN }} # already automatically created for each workflow job. before each job, the token is created and expires when job finishes or after max 24h.
+
+repository secrets can be used only in the specific repo. are public to all user with access to repo. are accessible to all the jobs in the workflow.
+env secrets are specific to a particular env. can be used in workflows that run in dif env. can be made private. are accessible to jobs that run in the env. higher precedence than repo secrets.
+use if on the jobs to specify which branch will trigger the deployment to specific env. if: contains(github.ref, 'feature/') iar in prod if: github.ref == 'refs/heads/main'
