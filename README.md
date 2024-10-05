@@ -111,3 +111,12 @@ Github Packages tab : is a hosting service , a place on github where we can publ
 repository secrets can be used only in the specific repo. are public to all user with access to repo. are accessible to all the jobs in the workflow.
 env secrets are specific to a particular env. can be used in workflows that run in dif env. can be made private. are accessible to jobs that run in the env. higher precedence than repo secrets.
 use if on the jobs to specify which branch will trigger the deployment to specific env. if: contains(github.ref, 'feature/') iar in prod if: github.ref == 'refs/heads/main'
+Reusable workflow:
+on:
+  workflow_call: #mandatory for reusable workflow
+uses: ./.github/workflows/reusable-workflow.yml # in this file, all the reusable code should be declared like jobs.  
+if use the reusable workflow from other repo, organization and repo name should be in the path. uses: xyz-orgatization/nodejs-app-repo/.github/workflows/reusable-workflow.yml
+using secrets in reusable flow. in the job use secrets: inherit (same organization) or with workflow_call: secrets and in caller wf use in job: secrets: secretName: ${{secrets.secretName}}
+inputs in reusable flow, used for env vars to be reused 
+outputs
+starter workflows for organization, like a template to start workflow from.
