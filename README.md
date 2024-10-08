@@ -105,7 +105,7 @@ Github Packages tab : is a hosting service , a place on github where we can publ
           uses: docker/login-action@v3
           with:
             registry: gchr.io
-            username: ${{ github.repository_owner }} #from github context
+            username: ${{ github.repository_owner }} # from github context
             password: ${{ secrets.GITHUB_TOKEN }} # already automatically created for each workflow job. before each job, the token is created and expires when job finishes or after max 24h.
 
 repository secrets can be used only in the specific repo. are public to all user with access to repo. are accessible to all the jobs in the workflow.
@@ -120,3 +120,17 @@ using secrets in reusable flow. in the job use secrets: inherit (same organizati
 inputs in reusable flow, used for env vars to be reused 
 outputs
 starter workflows for organization, like a template to start workflow from.
+type of custom actions: 
+- composite:
+ + executed on multiple OS runners
+ + combine wf steps
+ + simplified wf
+ + complex creation and maintenance
+- docker:
+ + run in a docker container
+ + slower than custom actions
+ + linux exclusive
+- JS actions:
+ + for JS, nodeJS
+ + executed on multiple OS runners
+ + lightweight and dont require a lot of resourcers to run
