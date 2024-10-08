@@ -134,3 +134,10 @@ type of custom actions:
  + for JS, nodeJS
  + executed on multiple OS runners
  + lightweight and dont require a lot of resourcers to run
+
+Self-hosted runners:
+- custome execution env
+- controller env for security
+- eliminates wait time
+- scalability
+- reduce latency by placing the runner in a closer region or for data regulation
