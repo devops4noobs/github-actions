@@ -146,5 +146,9 @@ Self-hosted runners:
 2. On which runners can Docker container actions execute? Docker container actions can only execute on runners with a Linux operating system. Self-hosted runners must use a Linux operating system and have Docker installed to run Docker container actions.
 3. What is the primary function of a workflow status badge in GitHub? displays the current status of a wf ( passing, failing, pending)
 4. While enabling debug logging, if both the secret and variable are set, the value of the variables takes precedence over the secret. false
-
-
+5. Your workflow involves building and deploying your application. However, building and deployment are separate complex processes with multiple common actions and steps. What type of action can combine these steps for reusability purpose? A composite action allows you to combine multiple steps or standalone actions into a single reusable action.
+6. repo lvl var has higher precedence than org lvl var
+7. Self hosted runner can NOT be assigned to more than one group at a time at the Enterpise Cloud offering
+8. How do you access and utilize an organization-level encrypted secret within a workflow YAML file? You can directly reference an organization-level secret within your workflow YAML file using the syntax: ${{ secrets.SECRET_NAME }}, where SECRET_NAME is the specific secret name.
+9. A workflow job execution fails on your self-hosted runner. In which directory are the log files stored? _diag directory
+10. During a workflow execution, how can you access the name of the user who triggered the workflow? ${{github.actor}}
