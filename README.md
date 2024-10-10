@@ -141,3 +141,10 @@ Self-hosted runners:
 - eliminates wait time
 - scalability
 - reduce latency by placing the runner in a closer region or for data regulation
+
+1. Which of the following event can be used to Autoscale self-hosted runners? webhook events.
+2. On which runners can Docker container actions execute? Docker container actions can only execute on runners with a Linux operating system. Self-hosted runners must use a Linux operating system and have Docker installed to run Docker container actions.
+3. What is the primary function of a workflow status badge in GitHub? displays the current status of a wf ( passing, failing, pending)
+
+
+
