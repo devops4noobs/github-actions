@@ -152,3 +152,10 @@ Self-hosted runners:
 8. How do you access and utilize an organization-level encrypted secret within a workflow YAML file? You can directly reference an organization-level secret within your workflow YAML file using the syntax: ${{ secrets.SECRET_NAME }}, where SECRET_NAME is the specific secret name.
 9. A workflow job execution fails on your self-hosted runner. In which directory are the log files stored? _diag directory
 10. During a workflow execution, how can you access the name of the user who triggered the workflow? ${{github.actor}}
+11. Which custom action is best suited where the action code should not be running on the runner machine which executes the workflow steps? Docker container Action
+12. Which of the following are required in a action’s metadata file? name, description, runs
+13. Which of the following syntax is used to disable permissions for all of the available scopes? permissions: {}
+14. A variable named dev_url with a value as dev-kodekloud.com is defined at the repository and environment level. How can we access this variable at the workflow steps? ${{vars.dev_url}}
+
+
+
