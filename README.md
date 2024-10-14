@@ -156,6 +156,10 @@ Self-hosted runners:
 12. Which of the following are required in a action’s metadata file? name, description, runs
 13. Which of the following syntax is used to disable permissions for all of the available scopes? permissions: {}
 14. A variable named dev_url with a value as dev-kodekloud.com is defined at the repository and environment level. How can we access this variable at the workflow steps? ${{vars.dev_url}}
-
+15. Within github actions workflow, which of the following is the recommended way of logging into Github Container Registry? docker/login-action@v2.2.0 action
+16. If you define a branch with the ! character, you must also define at least one branch without the ! character. If you only want to exclude branches, use branches-ignore instead.
+17. A wf with a schedule event can only run on the default branch.
+18. While creating an organization template workflow, in which directory should be define/create the template? workflow-templates
+19. You can use the GitHub API to trigger a webhook event called repository_dispatch when you want to trigger a workflow for activity that happens outside of GitHub.
 
 
